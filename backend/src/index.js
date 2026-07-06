@@ -14,7 +14,7 @@ app.use(cors({origin:FRONTEND_URL, credentials: true}))
 app.use(clerkMiddleware())
 
 app.get("/health", (req, res) => {
-  res.status(200).json({ok: true})
+  res.status(200).json({ok: true, message: req.body})
 })
 
 app.listen(PORT, () => {
